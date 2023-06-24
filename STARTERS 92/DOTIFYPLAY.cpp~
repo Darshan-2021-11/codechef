@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int solve() {
+  int n, k, l, ml = 0, tmp1, tmp2;
+  cin >> n >> k >> l;
+
+  int mi[n] { 0 };
+
+  for(int i=0; i < n; i++) {
+    cin >> tmp1 >> tmp2;
+    if(tmp2 == l) mi[index++] = tmp1;
+  }
+
+  if(index < k-1) {
+    cout << -1 << '\n';
+    return 0;
+  }
+
+  sort(mi, mi + index);
+
+  while(index-- >= 0) ml += mi[index];
+  cout << mi << '\n';
+
+  return 0;
+}
+
+int main() {
+  int t;
+  cin >> t;
+  while(t--) solve();
+
+  return 0;
+}
